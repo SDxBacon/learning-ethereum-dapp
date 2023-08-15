@@ -21,7 +21,7 @@ contract SimpleToken {
     balances[_to] += _amount;
   }
 
-  // 取得特定位址的 SimpleToken 數量
+  // 取得特定 account 位址擁有的 SimpleToken 數量
   function balanceOf(address _owner) public view returns (uint) {
     return balances[_owner];
   }
