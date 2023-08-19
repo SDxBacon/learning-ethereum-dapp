@@ -11,7 +11,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const AccountsTable = () => {
+/**
+ * AccountsTable component
+ */
+function AccountsTable() {
   const { state } = useWeb3Provider()!;
 
   return (
@@ -38,6 +41,6 @@ const AccountsTable = () => {
       </Table>
     </Wrapper>
   );
-};
+}
 
 export default AccountsTable;

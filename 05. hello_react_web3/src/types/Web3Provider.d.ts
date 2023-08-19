@@ -4,7 +4,7 @@ import { BrowserProvider } from "ethers";
 export type MetaMaskConnectionStatus = "NOT_CONNECTED" | "CONNECTED";
 
 /**
- * Web3State
+ * type: Web3State
  */
 export type Web3State = {
   /** 是否有 metamask */
@@ -20,11 +20,11 @@ export type Web3State = {
 };
 
 /**
- * AccountInfo 型態
+ * type: AccountInfo
  */
 export type AccountInfo = {
   /** 帳號 address*/
   address: string;
-  /** 帳號 ETH 餘額 */
+  /** 帳號 ETH 餘額 (單位: wei) */
   balance: bigint;
 };
