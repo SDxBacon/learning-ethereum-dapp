@@ -1,9 +1,8 @@
 import { ethers } from "ethers";
-import { Draft } from "immer";
-import { useMemo, useReducer, createContext, useLayoutEffect } from "react";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
+import { useMemo, useReducer, createContext, useLayoutEffect } from "react";
 // types
+import { Draft } from "immer";
 import { Web3State } from "../../types/Web3Provider";
 
 const initialState: Web3State = {
@@ -14,7 +13,7 @@ const initialState: Web3State = {
   accountList: [],
 };
 
-// createSlice
+// using @reduxjs/toolkit createSlice to create reducer and actions
 const { reducer, actions } = createSlice({
   name: "web3",
   initialState,
@@ -41,7 +40,8 @@ const { reducer, actions } = createSlice({
   },
 });
 
-const Web3ProviderContext = createContext<
+// Web3ProviderContext
+export const Web3ProviderContext = createContext<
   { state: Web3State; dispatch: React.Dispatch<any> } | undefined
 >(undefined);
 
@@ -68,8 +68,6 @@ const Web3Provider: React.FC<React.PropsWithChildren> = ({ children }) => {
   );
 };
 
-// export Web3ProviderContext
-export { Web3ProviderContext };
 // export actions
 export { actions };
 // export default: Web3Provider

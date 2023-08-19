@@ -12,7 +12,7 @@ function App() {
   const { state } = useWeb3Provider();
 
   /**
-   * 沒有 metamask
+   * 沒有 metamask 顯示 NoEthereum 元件
    */
   if (!state.web3)
     return (
@@ -22,11 +22,11 @@ function App() {
     );
 
   /**
-   *
+   * 擁有 metamask，顯示 ConnectButton & AccountsTable
    */
   return (
     <div className="App">
-      <div style={{ margin: "auto 0" }}>
+      <div>
         <ConnectButton />
         <AccountsTable />
       </div>

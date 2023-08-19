@@ -44,14 +44,14 @@ function ConnectButton() {
         addressList.map((addr) => provider!.getBalance(addr))
       );
 
-      // reduce
+      // reduce accountInfoList
       const accountInfoList = addressList.reduce((acc, address, index) => {
         const balance = balances[index];
         acc.push({ address, balance });
         return acc;
       }, [] as Web3State["accountList"]);
 
-      //
+      // update store
       dispatch(actions.updateAccountList(accountInfoList));
       dispatch(actions.updateConnectionStatus("CONNECTED"));
     } catch (e) {
